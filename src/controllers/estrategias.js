@@ -8,6 +8,13 @@ class Estrategia {
         res.send();
     }
 
+    async estrategia(req, res) {
+        let Estrategia = require('../models/estrategia');       
+        let estrategias = await Estrategia.find({status : 1});
+        res.send(estrategias);
+    }
+
+
 }
 
 
