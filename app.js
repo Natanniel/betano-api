@@ -36,6 +36,7 @@ class App {
     this.server.use(require('./src/routes/roletas'));
     this.server.use(require('./src/routes/usuarios'));
     this.server.use(require('./src/routes/maquinas'));
+    this.server.use(require('./src/routes/estrategias'));
   }
 
 }
