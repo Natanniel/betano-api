@@ -25,6 +25,8 @@ class Estrategia {
         res.send(estrategias);
     }
 
+       
+
 }
 
 

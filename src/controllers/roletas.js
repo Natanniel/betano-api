@@ -4,32 +4,13 @@ class Roletas {
     async listagem(req, res) {
 
         let Roleta = require('../models/roletas')
-        let roleta = await Roleta.find({ nome: req.query.roleta })
+        let roleta;
 
+        if(req.query.tipo)
+            roleta = await Roleta.find({tipo:req.query.tipo, nome: req.query.roleta })
+        else
+            roleta = await Roleta.find({ nome: req.query.roleta })
 
-
-/*
-        
-       
-
-        if (maquinas.length > 0) {
-            console.log('Máquina tem cadastro');
-        } else {
-
-            console.log('Máquina cadastrada')
-            let maquina = new Maquina({
-                //  ultimoSinal: Date.now(),
-                maquina: req.body.maquina,
-                //   baterias :[]
-            })
-
-
-
-            await maquina.save();
-
-
-        }
-*/
         res.send(roleta);
     }
 
